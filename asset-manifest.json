@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pradise-live/static/css/main.cd0d8b88.css",
+    "main.js": "/pradise-live/static/js/main.83d1556c.js",
+    "static/js/453.cb80e7c8.chunk.js": "/pradise-live/static/js/453.cb80e7c8.chunk.js",
+    "static/media/fa-solid-900.ttf": "/pradise-live/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/pradise-live/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/bootstrap-icons.woff?": "/pradise-live/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/fa-solid-900.woff2": "/pradise-live/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/bootstrap-icons.woff2?": "/pradise-live/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/fa-brands-400.woff2": "/pradise-live/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/fa-regular-400.ttf": "/pradise-live/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/fa-regular-400.woff2": "/pradise-live/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/fa-v4compatibility.ttf": "/pradise-live/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/pradise-live/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "index.html": "/pradise-live/index.html",
+    "main.cd0d8b88.css.map": "/pradise-live/static/css/main.cd0d8b88.css.map",
+    "main.83d1556c.js.map": "/pradise-live/static/js/main.83d1556c.js.map",
+    "453.cb80e7c8.chunk.js.map": "/pradise-live/static/js/453.cb80e7c8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd0d8b88.css",
+    "static/js/main.83d1556c.js"
+  ]
+}

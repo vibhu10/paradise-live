@@ -218,7 +218,8 @@ export default function Home() {
       {/* Header */}
       <div className="header">
         <div className="home-filter">
-          <img src="/48564e5fe8898cf62b0bbf42276d6cf3.jpeg" alt="paradise" />
+        <img src={process.env.PUBLIC_URL + '/paradiseLogo.jpeg'} alt="paradise" />
+
           <div className="filter"></div>
 
           <button className="filter-hamburger">

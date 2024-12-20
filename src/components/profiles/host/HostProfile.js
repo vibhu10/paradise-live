@@ -318,11 +318,9 @@ export default function HostProfile() {
   return (
     <div className="host-profile-container">
       <header className="host-profile-header">
-  <img
-    className="host-profile-logo"
-    src="/48564e5fe8898cf62b0bbf42276d6cf3.jpeg"
-    alt="Paradise"
-  />
+
+
+<img     className="host-profile-logo"src={process.env.PUBLIC_URL + '/paradiseLogo.jpeg'} alt="paradise" />
   <nav className="host-profile-nav">
     <ul>
       <li onClick={() => setActiveSection("Influencers")}>Influencers</li>

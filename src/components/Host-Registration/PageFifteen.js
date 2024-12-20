@@ -1,24 +1,39 @@
 import React, { useState } from "react";
-import '../Host-Registration/css/pageFifteen.css';
+import "../Host-Registration/css/pageFifteen.css";
 import { ThreeDots } from "react-loading-icons";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
-export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSaveProperty }) {
+export function PageFifteen({
+  handleNext,
+  handleBack,
+  handleSaveProperty,
+  setSaveProperty,
+}) {
   const [cards, setCards] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [newCard, setNewCard] = useState({ cardType: "", cardNumber: "" });
   const [editIndex, setEditIndex] = useState(null);
-  const [selectedPayoutMethod, setSelectedPayoutMethod] = useState("Bank account");
+  const [selectedPayoutMethod, setSelectedPayoutMethod] = useState(
+    "Bank account"
+  );
   const [billingCountry, setBillingCountry] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate(); // Use the useNavigate hook for navigation
+  const navigate = useNavigate();
 
   // List of regions for the dropdown
-  const regions = ["United Kingdom", "United States", "India", "Canada", "Australia", "Germany", "France"];
+  const regions = [
+    "United Kingdom",
+    "United States",
+    "India",
+    "Canada",
+    "Australia",
+    "Germany",
+    "France",
+  ];
 
   // Handle Save or Edit Card
   const handleSaveCard = () => {
-    if (!newCard.cardType || !newCard.cardNumber) {
+    if (!newCard.cardType.trim() || !newCard.cardNumber.trim()) {
       alert("Please fill in all card details!");
       return;
     }
@@ -32,7 +47,6 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
     setNewCard({ cardType: "", cardNumber: "" });
     setEditIndex(null);
     setShowPopup(false);
-    handleNext();
   };
 
   // Open Card Editor
@@ -64,10 +78,8 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
       handleSaveProperty(data);
       setSaveProperty(true);
       setIsLoading(false);
-      handleNext()
-   
+      handleNext();
     }, 5000); // 5-second loading delay
-
   };
 
   return (
@@ -82,7 +94,14 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
           <div className="PageFifteen-saved-cards">
             <div className="PageFifteen-header">
               <h5>Saved Card</h5>
-              <button onClick={() => setShowPopup(true)} className="PageFifteen-add-card-btn">
+              <button
+                onClick={() => {
+                  setNewCard({ cardType: "", cardNumber: "" });
+                  setEditIndex(null);
+                  setShowPopup(true);
+                }}
+                className="PageFifteen-add-card-btn"
+              >
                 + Add More Card
               </button>
             </div>
@@ -93,12 +112,18 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
                 {cards.map((card, index) => (
                   <div key={index} className="PageFifteen-card-item">
                     <div className="PageFifteen-card-info">
-                      <span className="PageFifteen-card-type">{card.cardType}</span>
-                      <span className="PageFifteen-card-number">...{card.cardNumber.slice(-4)}</span>
+                      <span className="PageFifteen-card-type">
+                        {card.cardType}
+                      </span>
+                      <span className="PageFifteen-card-number">
+                        ...{card.cardNumber.slice(-4)}
+                      </span>
                     </div>
                     <div className="PageFifteen-card-actions">
                       <button onClick={() => handleEditCard(index)}>Edit</button>
-                      <button onClick={() => handleDeleteCard(index)}>Delete</button>
+                      <button onClick={() => handleDeleteCard(index)}>
+                        Delete
+                      </button>
                       <button>Choose Primary</button>
                     </div>
                   </div>
@@ -112,7 +137,9 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
             <h2>Payments & Payouts</h2>
             <h4>Your payments</h4>
             <p>Keep track of all your payments and refunds.</p>
-            <button className="PageFifteen-manage-payments-btn">Manage payments</button>
+            <button className="PageFifteen-manage-payments-btn">
+              Manage payments
+            </button>
 
             <h4>Let's add a payout method</h4>
             <p>To start, let us know where you'd like us to send your money.</p>
@@ -177,7 +204,9 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
                   type="text"
                   placeholder="e.g., VISA or MasterCard"
                   value={newCard.cardType}
-                  onChange={(e) => setNewCard({ ...newCard, cardType: e.target.value })}
+                  onChange={(e) =>
+                    setNewCard({ ...newCard, cardType: e.target.value })
+                  }
                   className="PageFifteen-input"
                 />
                 <label>Card Number</label>
@@ -185,7 +214,9 @@ export function PageFifteen({ handleNext, handleBack, handleSaveProperty, setSav
                   type="text"
                   placeholder="Enter card number"
                   value={newCard.cardNumber}
-                  onChange={(e) => setNewCard({ ...newCard, cardNumber: e.target.value })}
+                  onChange={(e) =>
+                    setNewCard({ ...newCard, cardNumber: e.target.value })
+                  }
                   className="PageFifteen-input"
                 />
                 <div className="PageFifteen-popup-actions">
